@@ -943,19 +943,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alber\\.nuget\\packages\\": {}
+    "C:\\Users\\ollid\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
+      "projectUniqueName": "C:\\Users\\ollid\\Desktop\\Dan\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
       "projectName": "HlasiciSystem",
-      "projectPath": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
-      "packagesPath": "C:\\Users\\alber\\.nuget\\packages\\",
-      "outputPath": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\HlasiciSystem\\obj\\",
+      "projectPath": "C:\\Users\\ollid\\Desktop\\Dan\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
+      "packagesPath": "C:\\Users\\ollid\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ollid\\Desktop\\Dan\\api\\HlasiciSystem\\HlasiciSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alber\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ollid\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1018,7 +1018,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
