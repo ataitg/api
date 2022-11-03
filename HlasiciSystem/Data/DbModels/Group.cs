@@ -1,4 +1,7 @@
-﻿using System;
+﻿using D.APIModels;
+using Data.APIModels;
+using Data.Mapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,8 +18,16 @@ namespace Data.DbModels
         public User User { get; set; }
     }
 
-    public class GroupExtensions
+    public static class GroupExtensions
     {
-        public Group ToGroup(this IApplicationMapper mapper)
+        public static Group ToGroup(this IApplicationMapper mapper, CreateGroup createGroup)
+        {
+            return new()
+            {
+                Id = Guid.NewGuid(),
+                Name = createGroup.Name,
+                IsActive = false
+            };
+        }
     }
 }
