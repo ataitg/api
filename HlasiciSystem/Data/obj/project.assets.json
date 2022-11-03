@@ -996,19 +996,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alber\\.nuget\\packages\\": {}
+    "C:\\Users\\1001\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\1001\\Desktop\\api\\HlasiciSystem\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\Data\\Data.csproj",
-      "packagesPath": "C:\\Users\\alber\\.nuget\\packages\\",
-      "outputPath": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\Data\\obj\\",
+      "projectPath": "C:\\Users\\1001\\Desktop\\api\\HlasiciSystem\\Data\\Data.csproj",
+      "packagesPath": "C:\\Users\\1001\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\1001\\Desktop\\api\\HlasiciSystem\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alber\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\1001\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1069,7 +1069,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
