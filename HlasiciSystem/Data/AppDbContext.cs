@@ -13,5 +13,10 @@ namespace Data
         public AppDbContext(DbContextOptions options) : base(options)
         {
         }
+
+        public DbSet<Class> Classes { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<UserClass> UserClasses { get; set; }
+        public DbSet<UserGroup> UserGroups { get; set; }
     }
 }
