@@ -4,7 +4,6 @@ C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\HlasiciSystem.deps.json
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\HlasiciSystem.runtimeconfig.json
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\HlasiciSystem.dll
-C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\ref\HlasiciSystem.dll
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\HlasiciSystem.pdb
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Humanizer.dll
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -34,3 +33,11 @@ C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\obj
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\obj\Debug\net6.0\ref\HlasiciSystem.dll
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\obj\Debug\net6.0\HlasiciSystem.pdb
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\obj\Debug\net6.0\HlasiciSystem.genruntimeconfig.cache
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\obj\Debug\net6.0\refint\HlasiciSystem.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Data.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Data.pdb

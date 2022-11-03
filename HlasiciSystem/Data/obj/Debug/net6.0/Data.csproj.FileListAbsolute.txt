@@ -1,0 +1,14 @@
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\bin\Debug\net6.0\Data.deps.json
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\bin\Debug\net6.0\Data.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\bin\Debug\net6.0\Data.pdb
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.csproj.AssemblyReference.cache
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.AssemblyInfoInputs.cache
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.AssemblyInfo.cs
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.csproj.CoreCompileInputs.cache
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\refint\Data.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.pdb
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\ref\Data.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\bin\Debug\net6.0\Data.runtimeconfig.json
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.genruntimeconfig.cache

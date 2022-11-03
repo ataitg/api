@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ollid\\Desktop\\Dan\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj": {}
+    "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ollid\\Desktop\\Dan\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj": {
+    "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ollid\\Desktop\\Dan\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
-        "projectName": "HlasiciSystem",
-        "projectPath": "C:\\Users\\ollid\\Desktop\\Dan\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
-        "packagesPath": "C:\\Users\\ollid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ollid\\Desktop\\Dan\\api\\HlasiciSystem\\HlasiciSystem\\obj\\",
+        "projectUniqueName": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\Data\\Data.csproj",
+        "projectName": "Data",
+        "projectPath": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\alber\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ollid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alber\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,89 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
+        "projectName": "HlasiciSystem",
+        "projectPath": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
+        "packagesPath": "C:\\Users\\alber\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\HlasiciSystem\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alber\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\Data\\Data.csproj": {
+                "projectPath": "C:\\repos\\IT_Gymnazium\\Projects\\HlasiciSystem\\api\\HlasiciSystem\\Data\\Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.10, )"
@@ -65,7 +148,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -77,7 +161,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
