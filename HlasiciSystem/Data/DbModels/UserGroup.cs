@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace Data.DbModels
 {
     public class UserGroup
     {
@@ -16,4 +16,3 @@ namespace Data
         public bool HasQuestion { get; set; } = false;
     }
 }
-    

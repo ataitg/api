@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace Data.DbModels
 {
     public class Group
     {
@@ -13,5 +13,10 @@ namespace Data
         public bool IsActive { get; set; }
         public Guid TeacherId { get; set; }
         public User User { get; set; }
+    }
+
+    public class GroupExtensions
+    {
+        public Group ToGroup(this IApplicationMapper mapper)
     }
 }

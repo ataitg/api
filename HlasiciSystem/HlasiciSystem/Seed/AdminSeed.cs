@@ -1,4 +1,4 @@
-﻿using Data;
+﻿using Data.DbModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace HlasiciSystem.Seed

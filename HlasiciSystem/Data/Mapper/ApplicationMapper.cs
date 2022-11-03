@@ -1,4 +1,4 @@
-﻿namespace HlasiciSystem.Mapper
+﻿namespace Data.Mapper
 {
     public class ApplicationMapper : IApplicationMapper
     {

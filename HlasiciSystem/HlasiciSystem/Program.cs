@@ -1,4 +1,5 @@
 using Data;
+using Data.DbModels;
 using HlasiciSystem.Seed;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
