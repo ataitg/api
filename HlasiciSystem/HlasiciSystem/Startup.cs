@@ -1,6 +1,6 @@
 ﻿using Data;
 using Data.DbModels;
-using HlasiciSystem.Mapper;
+using Data.Mapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

@@ -19,13 +19,29 @@ namespace HlasiciSystem.Controllers
             this.context = context;
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         public IActionResult CreateClass([FromBody] CreateClass model)
         {
             var classs = mapper.ToClass(model);
             context.Classes.Add(classs);
             context.SaveChanges();
             return Ok();
+        }
+
+        [HttpDelete("delete/{id}")]
+       public IActionResult DeleteClass([FromRoute] string id)
+        {
+            var classs = context.Classes.FirstOrDefault(x => id == x.Id.ToString());
+            if(classs != null)
+            {
+                context.Classes.Remove(classs);
+                context.SaveChanges();
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }

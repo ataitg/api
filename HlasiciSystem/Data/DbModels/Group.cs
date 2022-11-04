@@ -1,5 +1,4 @@
-﻿using D.APIModels;
-using Data.APIModels;
+﻿using Data.APIModels;
 using Data.Mapper;
 using System;
 using System.Collections.Generic;
