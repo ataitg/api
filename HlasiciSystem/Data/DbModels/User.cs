@@ -9,5 +9,6 @@ namespace Data.DbModels
 {
     public class User : IdentityUser<Guid>
     {
+        public int Role { get; set; }
     }
 }
