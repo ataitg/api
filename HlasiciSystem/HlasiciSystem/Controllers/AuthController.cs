@@ -1,8 +1,11 @@
-﻿using Data.DbModels;
+﻿using Data;
+using Data.DbModels;
+using HlasiciSystem.Enum;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace HlasiciSystem.Controllers
 {
@@ -57,5 +60,35 @@ namespace HlasiciSystem.Controllers
     {
         public string Mail { get; set; }
         public string Password { get; set; }
+    }
+
+    public static class AuthExtensions
+    {
+        private static AppDbContext dbContext;
+
+        public static void Configure(AppDbContext context)
+        {
+            dbContext = context;
+        }
+
+        public static Guid GetUserId(this ClaimsPrincipal user)
+        {
+            if (user.Identity == null || !user.Identity.IsAuthenticated)
+            {
+                throw new InvalidOperationException("user not logged in");
+            }
+            var idString = user.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value;
+            return Guid.Parse(idString);
+        }
+
+        public static UserRoles GetUserRole(this ClaimsPrincipal user)
+        {
+            var account = dbContext.Users.FirstOrDefault(x => x.Id == user.GetUserId());
+            if (account == null)
+            {
+                return UserRoles.None;
+            }
+            return (UserRoles)account.Role;
+        }
     }
 }

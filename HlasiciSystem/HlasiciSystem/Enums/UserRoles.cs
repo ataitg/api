@@ -1,4 +1,4 @@
-﻿namespace Identity.Enum
+﻿namespace HlasiciSystem.Enum
 {
     [Flags]
     public enum UserRoles

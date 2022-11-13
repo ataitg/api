@@ -1,5 +1,6 @@
 using Data;
 using Data.DbModels;
+using HlasiciSystem.Controllers;
 using HlasiciSystem.Seed;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,7 @@ namespace HlasiciSystem
             var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
             var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
             await dbContext.Database.MigrateAsync();
+            AuthExtensions.Configure(dbContext);
             await AdminSeed.CreateAdminAsync(userManager);
 
             app.Run();
