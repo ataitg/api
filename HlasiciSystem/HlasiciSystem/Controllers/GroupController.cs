@@ -2,6 +2,9 @@
 using Data.APIModels;
 using Data.DbModels;
 using Data.Mapper;
+using HlasiciSystem.Enum;
+using Identity.Attribute;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HlasiciSystem.Controllers
@@ -21,16 +24,17 @@ namespace HlasiciSystem.Controllers
             this.context = context;
         }
 
-
+        [Authorize]
+        [Role(UserRoles.Teacher)]
         [HttpPost("/create/group")]
         public IActionResult CreateGroup([FromBody] CreateGroup model)
         {
             var group = mapper.ToGroup(model);
-
-            //get user id - will be implemented later
+            group.TeacherId = User.GetUserId();
 
             context.Groups.Add(group);
             context.SaveChanges();
+
             return Ok();
         }
     }
