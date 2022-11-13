@@ -2,9 +2,7 @@
 using Data.APIModels;
 using Data.DbModels;
 using Data.Mapper;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
 namespace HlasiciSystem.Controllers
 {
@@ -24,7 +22,7 @@ namespace HlasiciSystem.Controllers
         }
 
 
-        [HttpPost("create/group")]
+        [HttpPost("/create/group")]
         public IActionResult CreateGroup([FromBody] CreateGroup model)
         {
             var group = mapper.ToGroup(model);

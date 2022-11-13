@@ -19,7 +19,7 @@ namespace HlasiciSystem.Controllers
             this.context = context;
         }
 
-        [HttpPost]
+        [HttpPost("/create/class")]
         public IActionResult CreateClass([FromBody] CreateClass model)
         {
             var classs = mapper.ToClass(model);
