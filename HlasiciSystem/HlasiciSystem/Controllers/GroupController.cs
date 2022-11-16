@@ -7,6 +7,7 @@ using Identity.Attribute;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Data.VModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace HlasiciSystem.Controllers
 {
@@ -41,7 +42,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpGet("/delete/group/{id}")]
+        [HttpGet("/delete/group/{groupId}")]
         public IActionResult DeleteGroup([FromRoute] string groupId)
         {
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
@@ -63,7 +64,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpGet("/activate/group/{id}")]
+        [HttpGet("/activate/group/{groupId}")]
         public IActionResult ActivateGroup([FromRoute] string groupId)
         {
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
@@ -86,7 +87,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpGet("/deactivate/group/{id}")]
+        [HttpGet("/deactivate/group/{groupId}")]
         public IActionResult DeactivateGroup([FromRoute] string groupId)
         {
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
@@ -109,7 +110,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpPost("/rename/group/{id}")]
+        [HttpPost("/rename/group/{groupId}")]
         public IActionResult RenameGroup([FromRoute] string groupId, [FromBody] RenameGroup model)
         {
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
@@ -132,7 +133,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpPost("/add/users/group/{id}")]
+        [HttpPost("/add/users/group/{groupId}")]
         public IActionResult AddUsersToGroup([FromRoute] string groupId, [FromBody] List<string> userIds)
         {
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
@@ -167,7 +168,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpDelete("/remove/users/group/{id}")]
+        [HttpDelete("/remove/users/group/{groupId}")]
         public IActionResult RemoveUsersFromGroup([FromRoute] string groupId, [FromBody] List<string> userIds)
         {
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
@@ -200,7 +201,7 @@ namespace HlasiciSystem.Controllers
         [HttpGet("/get/groups")]
         public IActionResult GetGroups()
         {
-            var groups = new List<GroupVm>();
+            var groups   = new List<GroupVm>();
 
             context.Groups.Where(x => x.TeacherId == User.GetUserId()).ToList()
                 .ForEach(group =>
@@ -210,6 +211,5 @@ namespace HlasiciSystem.Controllers
             
             return Ok(groups);
         }
-
     }
 }
