@@ -55,5 +55,31 @@ namespace HlasiciSystem.Controllers
 
             return Ok(users);
         }
+
+        [Authorize]
+        [Role(UserRoles.User)]
+        [HttpGet("/has/question/{groupId}")]
+        public IActionResult HasQuestion([FromRoute] string groupId)
+        {
+            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
+            if (group == null)
+            {
+                return BadRequest();
+            }
+
+            var userGroup = context.UserGroups.FirstOrDefault(x => x.UserId == User.GetUserId() && x.GroupId.ToString() == groupId);
+            if (userGroup == null)
+            {
+                return BadRequest();
+            }
+
+            userGroup.HasQuestion = !userGroup.HasQuestion;
+
+            context.UserGroups.Update(userGroup);
+            context.SaveChanges();
+
+            return Ok();
+        }
+        
     }
 }
