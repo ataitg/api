@@ -1,5 +1,6 @@
 ﻿using Data.APIModels;
 using Data.Mapper;
+using Data.VModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,16 @@ namespace Data.DbModels
                 Id = Guid.NewGuid(),
                 Name = createGroup.Name,
                 IsActive = false
+            };
+        }
+
+        public static GroupVm ToGroupVm(this IApplicationMapper mapper, Group group)
+        {
+            return new()
+            {
+                Id = group.Id.ToString(),
+                Name = group.Name,
+                IsActive = group.IsActive
             };
         }
     }
