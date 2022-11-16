@@ -37,5 +37,27 @@ namespace HlasiciSystem.Controllers
 
             return Ok();
         }
+
+        [Authorize]
+        [Role(UserRoles.Teacher)]
+        [HttpGet("/delete/group/{id}")]
+        public IActionResult DeleteGroup([FromRoute] string groupId)
+        {
+            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
+            if (group == null)
+            {
+                return BadRequest();
+            }
+
+            if (group.TeacherId != User.GetUserId())
+            {
+                return Forbid();
+            }
+
+            context.Groups.Remove(group);
+            context.SaveChanges();
+
+            return Ok();
+        }
     }
 }
