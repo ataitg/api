@@ -1,6 +1,6 @@
 ﻿using Data;
 using Data.DbModels;
-using HlasiciSystem.Enum;
+using Data.Enum;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -88,7 +88,7 @@ namespace HlasiciSystem.Controllers
             {
                 return UserRoles.None;
             }
-            return (UserRoles)account.Role;
+            return account.Role;
         }
     }
 }

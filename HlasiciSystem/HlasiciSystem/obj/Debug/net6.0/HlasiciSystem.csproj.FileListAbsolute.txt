@@ -41,3 +41,8 @@ C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\obj\Debug\net6.0\refint\HlasiciSystem.dll
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Data.dll
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Data.pdb
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\obj\Debug\net6.0\staticwebassets\msbuild.HlasiciSystem.Microsoft.AspNetCore.StaticWebAssets.props
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\obj\Debug\net6.0\staticwebassets\msbuild.build.HlasiciSystem.props
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.HlasiciSystem.props
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.HlasiciSystem.props
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\obj\Debug\net6.0\staticwebassets.pack.json

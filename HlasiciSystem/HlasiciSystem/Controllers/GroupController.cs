@@ -2,7 +2,7 @@
 using Data.APIModels;
 using Data.DbModels;
 using Data.Mapper;
-using HlasiciSystem.Enum;
+using Data.Enum;
 using Identity.Attribute;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

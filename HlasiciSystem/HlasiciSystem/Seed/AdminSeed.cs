@@ -1,5 +1,5 @@
 ﻿using Data.DbModels;
-using HlasiciSystem.Enum;
+using Data.Enum;
 using Microsoft.AspNetCore.Identity;
 
 namespace HlasiciSystem.Seed
@@ -13,7 +13,7 @@ namespace HlasiciSystem.Seed
                 UserName = "admin@example.com",
                 Email = "admin@example.com",
                 EmailConfirmed = true,
-                Role = (int)UserRoles.Admin
+                Role = UserRoles.Admin
             };
 
             var user = await userManager.FindByEmailAsync(admin.Email);

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Data.Enum;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Data.DbModels
 {
     public class User : IdentityUser<Guid>
     {
-        public int Role { get; set; }
+        public UserRoles Role { get; set; }
     }
 }

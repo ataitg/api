@@ -1,5 +1,5 @@
 ﻿using HlasiciSystem.Controllers;
-using HlasiciSystem.Enum;
+using Data.Enum;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
