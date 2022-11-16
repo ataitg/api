@@ -134,7 +134,7 @@ namespace HlasiciSystem.Controllers
         [Authorize]
         [Role(UserRoles.Teacher)]
         [HttpPost("/add/users/group/{groupId}")]
-        public IActionResult AddUsersToGroup([FromRoute] string groupId, [FromBody] List<string> userIds)
+        public IActionResult AddUsersToGroup([FromRoute] string groupId, [FromBody] Users model)
         {
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
             if (group == null)
@@ -147,7 +147,7 @@ namespace HlasiciSystem.Controllers
                 return Forbid();
             }
 
-            userIds.ForEach(userId =>
+            model.Ids.ForEach(userId =>
             {
                 var user = context.Users.FirstOrDefault(x => x.Id.ToString() == userId);
                 if (user != null)
@@ -169,7 +169,7 @@ namespace HlasiciSystem.Controllers
         [Authorize]
         [Role(UserRoles.Teacher)]
         [HttpDelete("/remove/users/group/{groupId}")]
-        public IActionResult RemoveUsersFromGroup([FromRoute] string groupId, [FromBody] List<string> userIds)
+        public IActionResult RemoveUsersFromGroup([FromRoute] string groupId, [FromBody] Users model)
         {
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
             if (group == null)
@@ -182,7 +182,7 @@ namespace HlasiciSystem.Controllers
                 return Forbid();
             }
 
-            userIds.ForEach(userId =>
+            model.Ids.ForEach(userId =>
             {
                 var userGroup = context.UserGroups.FirstOrDefault(x => x.UserId.ToString() == userId && x.GroupId.ToString() == groupId);
                 if (userGroup != null)
@@ -209,6 +209,21 @@ namespace HlasiciSystem.Controllers
                     groups.Add(mapper.ToGroupVm(group));
                 });
             
+            return Ok(groups);
+        }
+
+        [Authorize]
+        [Role(UserRoles.User)]
+        [HttpGet("/get/groups/student")]
+        public IActionResult GetGroupAsStudent()
+        {
+            var groups = new List<GroupVm>();
+            context.UserGroups.Where(x => x.UserId == User.GetUserId()).Include(y => y.Group).ToList()
+                .ForEach(group =>
+                {
+                    groups.Add(mapper.ToGroupVm(group.Group));
+                });
+
             return Ok(groups);
         }
     }
