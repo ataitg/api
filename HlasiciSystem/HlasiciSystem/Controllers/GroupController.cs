@@ -127,7 +127,45 @@ namespace HlasiciSystem.Controllers
             context.SaveChanges();
 
             return Ok();
-        } 
+        }
+
+        [Authorize]
+        [Role(UserRoles.Teacher)]
+        [HttpPost("/add/users/group/{id}")]
+        public IActionResult AddUsersToGroup([FromRoute] string groupId, [FromBody] List<string> userIds)
+        {
+            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
+            if (group == null)
+            {
+                return BadRequest();
+            }
+
+            if (group.TeacherId != User.GetUserId())
+            {
+                return Forbid();
+            }
+
+            userIds.ForEach(userId =>
+            {
+                var user = context.Users.FirstOrDefault(x => x.Id.ToString() == userId);
+                if (user != null)
+                {
+                    context.UserGroups.Add(new()
+                    {
+                        Id = Guid.NewGuid(),
+                        GroupId = group.Id,
+                        UserId = user.Id,
+
+                    });
+                    context.SaveChanges();
+                }
+            });
+
+            return Ok();
+        }
+
+        
+
 
     }
 }
