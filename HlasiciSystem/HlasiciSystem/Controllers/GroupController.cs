@@ -105,6 +105,9 @@ namespace HlasiciSystem.Controllers
             context.Groups.Update(group);
             context.SaveChanges();
 
+            context.UserGroups.Where(x => x.GroupId == group.Id).ToList()
+                .ForEach(userGroup => context.UserGroups.Remove(userGroup));
+
             return Ok();
         }
 
