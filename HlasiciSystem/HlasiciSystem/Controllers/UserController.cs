@@ -22,7 +22,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpGet]
+        [HttpGet("/get/users")]
         public IActionResult GetUsers()
         {
             var users = new List<UserVm>();
