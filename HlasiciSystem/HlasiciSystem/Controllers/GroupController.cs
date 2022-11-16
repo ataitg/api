@@ -42,7 +42,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpGet("/delete/group/{groupId}")]
+        [HttpDelete("/delete/group/{groupId}")]
         public IActionResult DeleteGroup([FromRoute] string groupId)
         {
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
@@ -202,7 +202,6 @@ namespace HlasiciSystem.Controllers
         public IActionResult GetGroups()
         {
             var groups   = new List<GroupVm>();
-
             context.Groups.Where(x => x.TeacherId == User.GetUserId()).ToList()
                 .ForEach(group =>
                 {
