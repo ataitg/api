@@ -6,6 +6,7 @@ using Data.Enum;
 using Identity.Attribute;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Data.VModels;
 
 namespace HlasiciSystem.Controllers
 {
@@ -194,6 +195,21 @@ namespace HlasiciSystem.Controllers
             return Ok();
         }
 
+        [Authorize]
+        [Role(UserRoles.Teacher)]
+        [HttpGet("/get/groups")]
+        public IActionResult GetGroups()
+        {
+            var groups = new List<GroupVm>();
+
+            context.Groups.Where(x => x.TeacherId == User.GetUserId()).ToList()
+                .ForEach(group =>
+                {
+                    groups.Add(mapper.ToGroupVm(group));
+                });
+            
+            return Ok(groups);
+        }
 
     }
 }
