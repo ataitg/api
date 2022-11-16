@@ -59,5 +59,28 @@ namespace HlasiciSystem.Controllers
 
             return Ok();
         }
+
+        [Authorize]
+        [Role(UserRoles.Teacher)]
+        [HttpGet("/activate/group/{id}")]
+        public IActionResult ActivateGroup([FromRoute] string groupId)
+        {
+            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
+            if (group == null)
+            {
+                return BadRequest();
+            }
+
+            if(group.TeacherId != User.GetUserId())
+            {
+                return Forbid();
+            }
+
+            group.IsActive = true;
+            context.Groups.Update(group);
+            context.SaveChanges();
+
+            return Ok();
+        }
     }
 }
