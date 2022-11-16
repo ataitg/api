@@ -17,7 +17,7 @@ namespace HlasiciSystem.Controllers
         private readonly AppDbContext context;
 
         public GroupController(
-            IApplicationMapper mapper, 
+            IApplicationMapper mapper,
             AppDbContext context)
         {
             this.mapper = mapper;
@@ -71,7 +71,7 @@ namespace HlasiciSystem.Controllers
                 return BadRequest();
             }
 
-            if(group.TeacherId != User.GetUserId())
+            if (group.TeacherId != User.GetUserId())
             {
                 return Forbid();
             }
@@ -82,5 +82,52 @@ namespace HlasiciSystem.Controllers
 
             return Ok();
         }
+
+        [Authorize]
+        [Role(UserRoles.Teacher)]
+        [HttpGet("/deactivate/group/{id}")]
+        public IActionResult DeactivateGroup([FromRoute] string groupId)
+        {
+            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
+            if (group == null)
+            {
+                return BadRequest();
+            }
+
+            if (group.TeacherId != User.GetUserId())
+            {
+                return Forbid();
+            }
+
+            group.IsActive = false;
+            context.Groups.Update(group);
+            context.SaveChanges();
+
+            return Ok();
+        }
+
+        [Authorize]
+        [Role(UserRoles.Teacher)]
+        [HttpPost("/rename/group/{id}")]
+        public IActionResult RenameGroup([FromRoute] string groupId, [FromBody] RenameGroup model)
+        {
+            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
+            if(group== null)
+            {
+                return BadRequest();
+            }
+
+            if(group.TeacherId != User.GetUserId())
+            {
+                return Forbid();
+            }
+
+            group.Name = model.Name;
+            context.Groups.Update(group);
+            context.SaveChanges();
+
+            return Ok();
+        } 
+
     }
 }
