@@ -6,6 +6,7 @@ using Identity.Attribute;
 using Data.Enum;
 using Data.VModels;
 using Data.DbModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace HlasiciSystem.Controllers
 {
@@ -28,6 +29,29 @@ namespace HlasiciSystem.Controllers
             var users = new List<UserVm>();
             context.Users.ToList()
                 .ForEach(user => users.Add(mapper.ToUserVm(user)));
+
+            return Ok(users);
+        }
+
+        [Authorize]
+        [Role(UserRoles.Teacher)]
+        [HttpGet("/get/users/question/{groupId}")]
+        public IActionResult GetUsersWithQuestion([FromRoute] string groupId)
+        {
+            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
+            if (group == null)
+            {
+                return BadRequest();    
+            }
+
+            if (group.TeacherId != User.GetUserId())
+            {
+                return Forbid();
+            }
+
+            var users = new List<UserVm>();
+            context.UserGroups.Where(x => x.Id == group.Id && x.HasQuestion).Include(y => y.User).ToList()
+                .ForEach(userGroup => users.Add(mapper.ToUserVm(userGroup.User)));
 
             return Ok(users);
         }
