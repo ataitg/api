@@ -117,12 +117,12 @@ namespace HlasiciSystem.Controllers
         public IActionResult RenameGroup([FromRoute] string groupId, [FromBody] RenameGroup model)
         {
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
-            if(group== null)
+            if (group == null)
             {
                 return BadRequest();
             }
 
-            if(group.TeacherId != User.GetUserId())
+            if (group.TeacherId != User.GetUserId())
             {
                 return Forbid();
             }
@@ -204,13 +204,13 @@ namespace HlasiciSystem.Controllers
         [HttpGet("/get/groups")]
         public IActionResult GetGroups()
         {
-            var groups   = new List<GroupVm>();
+            var groups = new List<GroupVm>();
             context.Groups.Where(x => x.TeacherId == User.GetUserId()).ToList()
                 .ForEach(group =>
                 {
                     groups.Add(mapper.ToGroupVm(group));
                 });
-            
+
             return Ok(groups);
         }
 

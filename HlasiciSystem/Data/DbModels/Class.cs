@@ -1,5 +1,6 @@
 ﻿using Data.APIModels;
 using Data.Mapper;
+using Data.VModels;
 using Npgsql.Replication;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,15 @@ namespace Data.DbModels
             {
                 Id = new Guid(),
                 Name = createClass.Name
+            };
+        }
+
+        public static ClassVm ToClassVm(this IApplicationMapper mapper, Class classModel)
+        {
+            return new()
+            {
+                Id = classModel.Id.ToString(),
+                Name = classModel.Name
             };
         }
     }

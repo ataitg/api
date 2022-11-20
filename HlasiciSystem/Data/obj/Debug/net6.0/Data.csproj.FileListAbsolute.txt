@@ -12,3 +12,17 @@ C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\ne
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\ref\Data.dll
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\bin\Debug\net6.0\Data.runtimeconfig.json
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.genruntimeconfig.cache
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\bin\Debug\net6.0\Data.deps.json
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\bin\Debug\net6.0\Data.runtimeconfig.json
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\bin\Debug\net6.0\Data.dll
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\bin\Debug\net6.0\Data.pdb
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.csproj.AssemblyReference.cache
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.AssemblyInfoInputs.cache
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.AssemblyInfo.cs
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.dll
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\obj\Debug\net6.0\refint\Data.dll
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.pdb
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\obj\Debug\net6.0\Data.genruntimeconfig.cache
+C:\Users\ollid\Desktop\api\HlasiciSystem\Data\obj\Debug\net6.0\ref\Data.dll
