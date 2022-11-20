@@ -228,5 +228,22 @@ namespace HlasiciSystem.Controllers
 
             return Ok(groups);
         }
+
+        [HttpGet("/get/groups/{groupId}/users")]
+        public IActionResult GetGroupUsers([FromRoute] string groupId)
+        {
+            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
+            if(group == null)
+            {
+                return BadRequest();
+            }
+            var users = new List<UserVm>();
+            context.UserGroups.Where(x => x.GroupId == group.Id).Include(y => y.User).ToList()
+                .ForEach(UserGroup =>
+                {
+                    users.Add(mapper.ToUserVm(UserGroup.User));
+                });
+            return Ok(users);
+        }
     }
 }
