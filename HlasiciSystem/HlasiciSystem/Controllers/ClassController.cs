@@ -55,7 +55,7 @@ namespace HlasiciSystem.Controllers
             return Ok(classes);
         }
 
-        [HttpGet("get/users/class/{classId}")]
+        [HttpGet("/get/users/class/{classId}")]
         public IActionResult GetClassUsers([FromRoute] string classId)
         {
             var classs = context.Classes.FirstOrDefault(x => x.Id.ToString() == classId);
