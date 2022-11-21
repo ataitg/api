@@ -51,6 +51,8 @@ namespace HlasiciSystem.Controllers
             return Ok();
         }
 
+        [Authorize]
+        [Role(UserRoles.Teacher)]
         [HttpGet("/get/classes")]
         public IActionResult GetClasses()
         {
@@ -62,13 +64,10 @@ namespace HlasiciSystem.Controllers
             return Ok(classes);
         }
 
-<<<<<<< HEAD
+
         [Authorize]
         [Role(UserRoles.Teacher)]
         [HttpGet("/get/class/{classId}/users")]
-=======
-        [HttpGet("/get/users/class/{classId}")]
->>>>>>> 78f88b3e2500ef949add9455ea83e4f0c403b732
         public IActionResult GetClassUsers([FromRoute] string classId)
         {
             var classs = context.Classes.FirstOrDefault(x => x.Id.ToString() == classId);

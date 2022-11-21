@@ -1001,11 +1001,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ollid\\Desktop\\api\\HlasiciSystem\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\ollid\\source\\repos\\api\\HlasiciSystem\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Users\\ollid\\Desktop\\api\\HlasiciSystem\\Data\\Data.csproj",
+      "projectPath": "C:\\Users\\ollid\\source\\repos\\api\\HlasiciSystem\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\ollid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ollid\\Desktop\\api\\HlasiciSystem\\Data\\obj\\",
+      "outputPath": "C:\\Users\\ollid\\source\\repos\\api\\HlasiciSystem\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ollid\\AppData\\Roaming\\NuGet\\NuGet.Config",

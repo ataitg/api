@@ -1235,11 +1235,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ollid\\Desktop\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
+      "projectUniqueName": "C:\\Users\\ollid\\source\\repos\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
       "projectName": "HlasiciSystem",
-      "projectPath": "C:\\Users\\ollid\\Desktop\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
+      "projectPath": "C:\\Users\\ollid\\source\\repos\\api\\HlasiciSystem\\HlasiciSystem\\HlasiciSystem.csproj",
       "packagesPath": "C:\\Users\\ollid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ollid\\Desktop\\api\\HlasiciSystem\\HlasiciSystem\\obj\\",
+      "outputPath": "C:\\Users\\ollid\\source\\repos\\api\\HlasiciSystem\\HlasiciSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ollid\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1256,8 +1256,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ollid\\Desktop\\api\\HlasiciSystem\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\ollid\\Desktop\\api\\HlasiciSystem\\Data\\Data.csproj"
+            "C:\\Users\\ollid\\source\\repos\\api\\HlasiciSystem\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\ollid\\source\\repos\\api\\HlasiciSystem\\Data\\Data.csproj"
             }
           }
         }
