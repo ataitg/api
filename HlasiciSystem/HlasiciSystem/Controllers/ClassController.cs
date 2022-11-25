@@ -14,7 +14,7 @@ using Data.Enum;
 namespace HlasiciSystem.Controllers
 {
     [ApiController]
-    [Route("[controler]")]
+    [Route("api/classes")]
     public class ClassController : ControllerBase
     {
         private readonly IApplicationMapper mapper;
@@ -27,7 +27,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpPost("/create/class")]
+        [HttpPost]
         public IActionResult CreateClass([FromBody] CreateClass model)
         {
             var classs = mapper.ToClass(model); 
@@ -38,7 +38,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpDelete("/delete/class/{classId}")]
+        [HttpDelete("{classId}")]
         public IActionResult DeleteClass([FromRoute] string classId)
         {
             var classs = context.Classes.FirstOrDefault(x => x.Id.ToString() == classId);
@@ -53,7 +53,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpGet("/get/classes")]
+        [HttpGet]
         public IActionResult GetClasses()
         {
             var classes = new List<ClassVm>();
@@ -67,7 +67,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpGet("/get/class/{classId}/users")]
+        [HttpGet("{classId}/users")]
         public IActionResult GetClassUsers([FromRoute] string classId)
         {
             var classs = context.Classes.FirstOrDefault(x => x.Id.ToString() == classId);
@@ -86,7 +86,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpPost("/add/class/{classId}/users")]
+        [HttpPost("{classId}/users")]
         public IActionResult AddUsersToClass([FromRoute] string classId, [FromBody] Users model)
         {
             var classs = context.Classes.FirstOrDefault(x => x.Id.ToString() == classId);
@@ -114,7 +114,7 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpPost("/remove/class/{classId}/users")]
+        [HttpDelete("{classId}/users")]
         public IActionResult RemoveUsersFromClass([FromRoute] string classId, [FromBody] Users model)
         {
             var classs = context.Classes.FirstOrDefault(x => x.Id.ToString() == classId);
