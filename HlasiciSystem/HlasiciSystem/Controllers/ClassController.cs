@@ -133,5 +133,23 @@ namespace HlasiciSystem.Controllers
             });
             return Ok();
         }
+
+        [Authorize]
+        [Role(UserRoles.Teacher)]
+        [HttpPatch("{classId}")]
+        public IActionResult RenameClass([FromBody] string newName, [FromRoute] string classId)
+        {
+            var classs = context.Classes.FirstOrDefault(x => x.Id.ToString() == classId);
+            if (classs == null)
+            {
+                return BadRequest();
+            }
+
+            classs.Name = newName;
+            context.Classes.Update(classs);
+            context.SaveChanges();
+
+            return Ok();
+        }
     }
 }

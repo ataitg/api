@@ -113,8 +113,8 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpPost("{groupId}")]
-        public IActionResult RenameGroup([FromRoute] string groupId, [FromBody] RenameGroup model)
+        [HttpPatch("{groupId}")]
+        public IActionResult RenameGroup([FromRoute] string groupId, [FromBody] string newName)
         {
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
             if (group == null)
@@ -127,7 +127,7 @@ namespace HlasiciSystem.Controllers
                 return Forbid();
             }
 
-            group.Name = model.Name;
+            group.Name = newName;
             context.Groups.Update(group);
             context.SaveChanges();
 
