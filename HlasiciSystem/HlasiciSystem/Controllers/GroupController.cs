@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Data.VModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace HlasiciSystem.Controllers
 {
@@ -114,8 +115,13 @@ namespace HlasiciSystem.Controllers
         [Authorize]
         [Role(UserRoles.Teacher)]
         [HttpPatch("{groupId}")]
-        public IActionResult RenameGroup([FromRoute] string groupId, [FromBody] string newName)
+        public IActionResult RenameGroup([FromRoute] string groupId, [FromBody] JsonPatchDocument<Group> patchDoc)
         {
+            if (patchDoc == null)
+            {
+                return BadRequest();
+            }
+
             var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
             if (group == null)
             {
@@ -127,7 +133,13 @@ namespace HlasiciSystem.Controllers
                 return Forbid();
             }
 
-            group.Name = newName;
+            patchDoc.ApplyTo(group, ModelState);
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             context.Groups.Update(group);
             context.SaveChanges();
 
