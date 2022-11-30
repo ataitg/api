@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 using Data.Enum;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace HlasiciSystem.Controllers
 {
@@ -137,15 +138,26 @@ namespace HlasiciSystem.Controllers
         [Authorize]
         [Role(UserRoles.Teacher)]
         [HttpPatch("{classId}")]
-        public IActionResult RenameClass([FromBody] string newName, [FromRoute] string classId)
+        public IActionResult RenameClass([FromRoute] string classId, [FromBody] JsonPatchDocument<Class> patchDoc)
         {
+            if (patchDoc == null)
+            {
+                return BadRequest();
+            }
+
             var classs = context.Classes.FirstOrDefault(x => x.Id.ToString() == classId);
             if (classs == null)
             {
                 return BadRequest();
             }
 
-            classs.Name = newName;
+            patchDoc.ApplyTo(classs, ModelState);
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             context.Classes.Update(classs);
             context.SaveChanges();
 
