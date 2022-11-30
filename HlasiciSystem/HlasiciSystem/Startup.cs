@@ -65,7 +65,8 @@ namespace HlasiciSystem
                 });
 
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
         }

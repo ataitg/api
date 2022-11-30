@@ -100,3 +100,5 @@ C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\repos\IT_Gymnazium\Projects\HlasiciSystem\api\HlasiciSystem\HlasiciSystem\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
