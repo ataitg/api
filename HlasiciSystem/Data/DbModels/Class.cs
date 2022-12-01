@@ -36,5 +36,19 @@ namespace Data.DbModels
                 Name = classModel.Name
             };
         }
+        
+        public static UpdateClass ToUpdateClass(this IApplicationMapper mapper, Class classModel)
+        {
+            return new()
+            {
+                Name = classModel.Name
+            };
+        }
+
+        public static Class ToClass(this IApplicationMapper mapper, UpdateClass updateClass, Class classModel)
+        {
+            classModel.Name = updateClass.Name;
+            return classModel;
+        }
     }
 }
