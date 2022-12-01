@@ -115,7 +115,7 @@ namespace HlasiciSystem.Controllers
         [Authorize]
         [Role(UserRoles.Teacher)]
         [HttpPatch("{groupId}")]
-        public IActionResult RenameGroup([FromRoute] string groupId, [FromBody] JsonPatchDocument<Group> patchDoc)
+        public IActionResult RenameGroup([FromRoute] string groupId, [FromBody] JsonPatchDocument<UpdateGroup> patchDoc)
         {
             if (patchDoc == null)
             {
@@ -133,14 +133,18 @@ namespace HlasiciSystem.Controllers
                 return Forbid();
             }
 
-            patchDoc.ApplyTo(group, ModelState);
+            var updateModel = mapper.ToUpdateGroup(group);
+
+            patchDoc.ApplyTo(updateModel, ModelState);
 
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
 
-            context.Groups.Update(group);
+            var updatedGroup = mapper.ToGroup(updateModel, group);
+
+            context.Groups.Update(updatedGroup);
             context.SaveChanges();
 
             return Ok();
