@@ -64,13 +64,6 @@ namespace HlasiciSystem.Controllers
 
     public static class AuthExtensions
     {
-        private static AppDbContext dbContext;
-
-        public static void Configure(AppDbContext context)
-        {
-            dbContext = context;
-        }
-
         public static Guid GetUserId(this ClaimsPrincipal user)
         {
             if (user.Identity == null || !user.Identity.IsAuthenticated)
@@ -81,7 +74,7 @@ namespace HlasiciSystem.Controllers
             return Guid.Parse(idString);
         }
 
-        public static UserRoles GetUserRole(this ClaimsPrincipal user)
+        public static UserRoles GetUserRole(this ClaimsPrincipal user, AppDbContext dbContext)
         {
             var account = dbContext.Users.FirstOrDefault(x => x.Id == user.GetUserId());
             if (account == null)

@@ -2,6 +2,7 @@
 using Data.Enum;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Data;
 
 namespace Identity.Attribute
 {
@@ -16,7 +17,9 @@ namespace Identity.Attribute
 
         public void OnAuthorization(AuthorizationFilterContext context)
         {
-            var userRole = context.HttpContext.User.GetUserRole();
+            var dbContext = (AppDbContext)context.HttpContext.RequestServices.GetService(typeof(AppDbContext));
+
+            var userRole = context.HttpContext.User.GetUserRole(dbContext);
 
             if((userRole & role) != role)
             {
