@@ -65,55 +65,6 @@ namespace HlasiciSystem.Controllers
 
         [Authorize]
         [Role(UserRoles.Teacher)]
-        [HttpGet("{groupId}/activate")]
-        public IActionResult ActivateGroup([FromRoute] string groupId)
-        {
-            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
-            if (group == null)
-            {
-                return BadRequest();
-            }
-
-            if (group.TeacherId != User.GetUserId())
-            {
-                return Forbid();
-            }
-
-            group.IsActive = true;
-            context.Groups.Update(group);
-            context.SaveChanges();
-
-            return Ok();
-        }
-
-        [Authorize]
-        [Role(UserRoles.Teacher)]
-        [HttpGet("{groupId}/deactivate")]
-        public IActionResult DeactivateGroup([FromRoute] string groupId)
-        {
-            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
-            if (group == null)
-            {
-                return BadRequest();
-            }
-
-            if (group.TeacherId != User.GetUserId())
-            {
-                return Forbid();
-            }
-
-            group.IsActive = false;
-            context.Groups.Update(group);
-            context.SaveChanges();
-
-            context.UserGroups.Where(x => x.GroupId == group.Id).ToList()
-                .ForEach(userGroup => context.UserGroups.Remove(userGroup));
-
-            return Ok();
-        }
-
-        [Authorize]
-        [Role(UserRoles.Teacher)]
         [HttpPatch("{groupId}")]
         public IActionResult UpdateGroup([FromRoute] string groupId, [FromBody] JsonPatchDocument<Group> patchDoc)
         {
@@ -138,6 +89,12 @@ namespace HlasiciSystem.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest();
+            }
+
+            if (!group.IsActive)
+            {
+                context.UserGroups.Where(x => x.GroupId == group.Id).ToList()
+                .ForEach(userGroup => context.UserGroups.Remove(userGroup));
             }
 
             context.Groups.Update(group);
@@ -257,5 +214,54 @@ namespace HlasiciSystem.Controllers
                 });
             return Ok(users);
         }
+
+        [Authorize]
+        [Role(UserRoles.Teacher)]
+        [HttpGet("{groupId}/users/inquiry")]
+        public IActionResult GetUsersWithQuestion([FromRoute] string groupId)
+        {
+            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
+            if (group == null)
+            {
+                return BadRequest();
+            }
+
+            if (group.TeacherId != User.GetUserId())
+            {
+                return Forbid();
+            }
+
+            var users = new List<UserVm>();
+            context.UserGroups.Where(x => x.Id == group.Id && x.HasQuestion).Include(y => y.User).ToList()
+                .ForEach(userGroup => users.Add(mapper.ToUserVm(userGroup.User)));
+
+            return Ok(users);
+        }
+
+        [Authorize]
+        [Role(UserRoles.User)]
+        [HttpGet("{groupId}/inquiry")]
+        public IActionResult HasQuestion([FromRoute] string groupId)
+        {
+            var group = context.Groups.FirstOrDefault(x => x.Id.ToString() == groupId);
+            if (group == null)
+            {
+                return BadRequest();
+            }
+
+            var userGroup = context.UserGroups.FirstOrDefault(x => x.UserId == User.GetUserId() && x.GroupId.ToString() == groupId);
+            if (userGroup == null)
+            {
+                return BadRequest();
+            }
+
+            userGroup.HasQuestion = !userGroup.HasQuestion;
+
+            context.UserGroups.Update(userGroup);
+            context.SaveChanges();
+
+            return Ok();
+        }
+
     }
 }
