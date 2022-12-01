@@ -42,5 +42,22 @@ namespace Data.DbModels
                 IsActive = group.IsActive
             };
         }
+
+        public static UpdateGroup ToUpdateGroup(this IApplicationMapper mapper, Group group)
+        {
+            return new()
+            {
+                Name = group.Name,
+                IsActive = group.IsActive
+            };
+        }
+
+        public static Group ToGroup(this IApplicationMapper mapper, UpdateGroup updateGroup, Group group)
+        {
+            group.IsActive = updateGroup.IsActive;
+            group.Name = updateGroup.Name;
+            return group;
+        }
+
     }
 }
